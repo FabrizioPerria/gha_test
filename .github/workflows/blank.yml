@@ -3,10 +3,7 @@
 name: CI
 
 # Controls when the workflow will run
-on:
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+on: pull_request
 
 jobs:
   build:
@@ -15,4 +12,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo ${{ github.event.pull_request.body }}
+        run: echo -e "${{ github.event.pull_request.body }}"
